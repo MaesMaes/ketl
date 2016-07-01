@@ -1,0 +1,10 @@
+AuthUserFile /home/host1298803/lhl-rb.ru/htdocs/www/admin/.htpasswd
+AuthName "Authorized personnel only."
+AuthType Basic
+<Files .htpasswd>
+	deny from all
+</Files>
+<Files admin.php>
+	Require valid-user
+</Files>
+

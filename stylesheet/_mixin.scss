@@ -1,0 +1,11 @@
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin inline {
+    display: inline-block;
+    vertical-align: top;
+}
