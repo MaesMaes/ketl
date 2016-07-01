@@ -1,5 +1,5 @@
 /**
- * Просто внешний вид 
+ * Просто внешний вид
  */
 body {
 	font-size:12pt;
@@ -20,10 +20,10 @@ h1{
 }
 .row {
 	display: inline-block;
-	width: 160px;
+	width: 140px;
 	font-size: 10pt;
 	margin-top: 40px;
-	margin-right: 8px;
+    margin-right: 23px;
 }
 
 .row:nth-child(3){
@@ -34,7 +34,7 @@ h1{
 	display:block;
 }
 .row select {
-	width: 160px;
+	width: 150px;
 	font-size: 1em;
 	border: 1px solid #aaaaaa;
 	padding: 6px 10px;
@@ -71,7 +71,10 @@ h1{
 .no {
     display: none;
 	clear: both;
-	color: #FF4848;
+	color: #fff;
+	padding: 10px;
+	background: rgb(255, 72, 72);
+	text-align: center;
 }
 
 #code{
