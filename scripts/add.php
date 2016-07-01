@@ -27,7 +27,8 @@ $table = 'pads';
 
              while (($data = fgetcsv($handle, 0, ",")) !== FALSE)
              {
-                $sql = "INSERT into pads(Mark, Class, Number_kitl, Mark_origin, Number_origin, Name) values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]')";
+                $sql = "INSERT  into pads(Mark, Class, Number_kitl, Mark_origin, Number_origin, Number_trw, Name)
+                                values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]','$data[5]','$data[6]')";
                 mysql_query($sql) or die(mysql_error());
              }
 

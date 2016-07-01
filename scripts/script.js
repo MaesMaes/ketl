@@ -5,15 +5,15 @@ function getName (str){
     }
     else{
         var i = str.lastIndexOf('/')+1;
-    }						
-    var filename = str.slice(i);			
+    }
+    var filename = str.slice(i);
     var uploaded = document.getElementById("fileformlabel");
     uploaded.innerHTML = filename;
 }
 $(function() {
 $('.selectbutton').on('click', function() {
     $('input[name="sel_file"]').click();
-}); 
+});
 });
 function call_delete() {
     var msg   = jQuery('#delete').serialize();
@@ -35,7 +35,7 @@ function call_delete() {
 function call_add() {
     var form = document.forms.add;
 
-    var formData = new FormData(form);  
+    var formData = new FormData(form);
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "scripts/add.php");
@@ -46,9 +46,8 @@ function call_add() {
                 data = xhr.responseText;
                  $('.success').text(data).fadeIn();
                  $('.delim').fadeIn();
-            } 
+            }
         }
     };
-
     xhr.send(formData);
 }

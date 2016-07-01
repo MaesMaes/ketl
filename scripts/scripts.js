@@ -72,8 +72,6 @@
                         var i = 0,
                             pads = JSON.parse(data);
 
-                        $('.pads_tab tbody tr').remove();
-
                         _.templateSettings.variable = "rc";
                         // Grab the HTML out of our template tag and pre-compile it.
                         var template = _.template(
@@ -90,7 +88,7 @@
                                     numKetl: pads[i].Number_kitl,
                                     original: pads[i].Mark_origin,
                                     numOriginal: pads[i].Number_origin,
-                                    numTRW: 'gbd2456',
+                                    numTRW: pads[i].Number_trw,
                                     desc: pads[i].Name,
                                     image: '%20' + pads[i].Number_kitl.slice(0, -2) + 'KT.jpg'
                                 });
@@ -98,6 +96,7 @@
                             $(".pads_tab").append(
                                 template(templateData)
                             );
+
                             $('.no').fadeOut();
                             $('.pads_tab').fadeIn();
                         } else {
@@ -126,17 +125,16 @@
                         var i = 0,
                             pads = JSON.parse(data);
 
-                        $('.pads_tab tbody tr').remove();
-
                         _.templateSettings.variable = "rc";
-                        // Grab the HTML out of our template tag and pre-compile it.
+
                         var template = _.template(
                             $("script.template").html()
                         );
-                        // Define our render data (to be put into the "rc" variable).
+
                         var templateData = {
                             listItems: []
                         };
+
                         $(".pads_tab").html('');
                         if (pads.length > 0) {
                             for (i; i < pads.length; i++) {
@@ -144,7 +142,7 @@
                                     numKetl: pads[i].Number_kitl,
                                     original: pads[i].Mark_origin,
                                     numOriginal: pads[i].Number_origin,
-                                    numTRW: 'gbd2456',
+                                    numTRW: pads[i].Number_trw,
                                     desc: pads[i].Name,
                                     image: '%20' + pads[i].Number_kitl.slice(0, -2) + 'KT.jpg'
                                 });
@@ -152,6 +150,7 @@
                             $(".pads_tab").append(
                                 template(templateData)
                             );
+							console.log(pads);
                             $('.no').fadeOut();
                             $('.pads_tab').fadeIn();
                         } else {

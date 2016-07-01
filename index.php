@@ -35,7 +35,7 @@ require_once( 'scripts/function.php' );
                     <div class="row">
                         <label for="producer">Марка:</label>
                         <select id="producer">
-                            <option value="0">Выберите из списка</option>
+                            <option value="0">Выберите марку</option>
                             <?php
                             $aProducers = getProducers();
                             foreach ( $aProducers as $aProducer ) {
@@ -47,7 +47,7 @@ require_once( 'scripts/function.php' );
                     <div class="row">
                         <label for="model">Модель:</label>
                         <select id="model" disabled >
-                            <option value="0">Выберите из списка</option>
+                            <option value="0">Выберите модель</option>
                         </select>
                     </div>
     		    </form>
@@ -77,10 +77,12 @@ require_once( 'scripts/function.php' );
                        <div class="pads_block-right-tbl-title">Номер оригинала</div>
                        <div class="pads_block-right-tbl-val"><%- listItem.numOriginal %></div>
                    </div>
-                   <div class="pads_block-right-tbl">
-                       <div class="pads_block-right-tbl-title">Номер TRW</div>
-                       <div class="pads_block-right-tbl-val"><%- listItem.numTRW %></div>
-                   </div>
+                   <% if ( listItem.numTRW ){ %>
+                       <div class="pads_block-right-tbl">
+                           <div class="pads_block-right-tbl-title">Номер TRW</div>
+                           <div class="pads_block-right-tbl-val"><%- listItem.numTRW %></div>
+                       </div>
+                   <% } %>
                    <div class="pads_block-right-desc">
                        <%- listItem.desc %>
                    </div>
